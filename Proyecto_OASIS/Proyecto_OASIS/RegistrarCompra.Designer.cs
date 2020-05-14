@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.labelx = new System.Windows.Forms.Label();
             this.lbhora = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // labelx
@@ -52,11 +54,12 @@
             this.lbhora.BackColor = System.Drawing.Color.Transparent;
             this.lbhora.Font = new System.Drawing.Font("BigNoodleTitling", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbhora.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(194)))), ((int)(((byte)(149)))));
-            this.lbhora.Location = new System.Drawing.Point(928, 9);
+            this.lbhora.Location = new System.Drawing.Point(919, 9);
             this.lbhora.Name = "lbhora";
             this.lbhora.Size = new System.Drawing.Size(130, 70);
             this.lbhora.TabIndex = 29;
             this.lbhora.Text = "HORA";
+            this.lbhora.Click += new System.EventHandler(this.Lbhora_Click);
             // 
             // comboBox1
             // 
@@ -65,6 +68,10 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(574, 21);
             this.comboBox1.TabIndex = 31;
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
             // 
             // RegistrarCompra
             // 
@@ -89,5 +96,6 @@
         private System.Windows.Forms.Label labelx;
         private System.Windows.Forms.Label lbhora;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Timer timer1;
     }
 }

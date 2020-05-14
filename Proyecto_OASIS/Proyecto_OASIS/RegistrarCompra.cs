@@ -16,5 +16,15 @@ namespace Proyecto_OASIS
         {
             InitializeComponent();
         }
+
+        private void Lbhora_Click(object sender, EventArgs e)
+        {
+            lbhora.Text = DateTime.Now.ToString("hh:mm:ss dddd MMMM yyy ");
+        }
+
+        private void Timer1_Tick(object sender, EventArgs e)
+        {
+            lbhora.Text = DateTime.Now.ToString("hh:mm:ss dddd MMMM yyy ");
+        }
     }
 }

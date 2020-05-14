@@ -66,5 +66,10 @@ namespace Proyecto_OASIS
             this.Hide();
             ToLogin.Show();
         }
+
+        private void Labelx_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

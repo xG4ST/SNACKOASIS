@@ -111,6 +111,7 @@
             this.labelx.Size = new System.Drawing.Size(267, 70);
             this.labelx.TabIndex = 28;
             this.labelx.Text = "SNACK OASIS";
+            this.labelx.Click += new System.EventHandler(this.Labelx_Click);
             // 
             // button1
             // 
