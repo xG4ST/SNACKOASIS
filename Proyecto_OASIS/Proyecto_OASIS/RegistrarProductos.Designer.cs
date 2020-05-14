@@ -103,7 +103,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("BigNoodleTitling", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(0)))), ((int)(((byte)(109)))));
-            this.label3.Location = new System.Drawing.Point(85, 133);
+            this.label3.Location = new System.Drawing.Point(102, 132);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(385, 70);
             this.label3.TabIndex = 21;
