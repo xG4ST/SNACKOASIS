@@ -47,7 +47,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("BigNoodleTitling", 99.74998F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(0)))), ((int)(((byte)(109)))));
-            this.label3.Location = new System.Drawing.Point(12, 234);
+            this.label3.Location = new System.Drawing.Point(12, 79);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(882, 144);
             this.label3.TabIndex = 17;
@@ -61,7 +61,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("BigNoodleTitling", 99.74998F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(0)))), ((int)(((byte)(109)))));
-            this.label1.Location = new System.Drawing.Point(18, 368);
+            this.label1.Location = new System.Drawing.Point(12, 213);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(769, 144);
             this.label1.TabIndex = 18;
@@ -75,7 +75,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("BigNoodleTitling", 99.74998F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(0)))), ((int)(((byte)(109)))));
-            this.label2.Location = new System.Drawing.Point(12, 656);
+            this.label2.Location = new System.Drawing.Point(18, 357);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(588, 144);
             this.label2.TabIndex = 19;
@@ -149,14 +149,12 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("BigNoodleTitling", 99.74998F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(0)))), ((int)(((byte)(109)))));
-            this.label5.Location = new System.Drawing.Point(12, 90);
+            this.label5.Location = new System.Drawing.Point(12, 656);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(922, 144);
             this.label5.TabIndex = 31;
             this.label5.Text = "REGISTRAR PROVEEDOR";
-
             this.label5.Click += new System.EventHandler(this.Label5_Click);
-
             // 
             // Elegir
             // 
