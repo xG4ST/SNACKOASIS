@@ -101,5 +101,10 @@ namespace Proyecto_OASIS
         {
 
         }
+
+        private void Registro_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
