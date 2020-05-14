@@ -157,6 +157,9 @@
 
             this.label5.Click += new System.EventHandler(this.Label5_Click);
 
+            // 
+            // Elegir
+            // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Proyecto_OASIS.Properties.Resources.Fondo;

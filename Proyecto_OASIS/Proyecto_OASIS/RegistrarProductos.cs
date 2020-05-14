@@ -38,5 +38,10 @@ namespace Proyecto_OASIS
             this.Hide();
             ToMenu.Show();
         }
+
+        private void RegistrarProductos_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

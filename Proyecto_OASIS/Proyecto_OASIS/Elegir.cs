@@ -74,7 +74,7 @@ namespace Proyecto_OASIS
 
         private void Label5_Click(object sender, EventArgs e)
         {
-            RegistrarCompra ToLogin = new RegistrarCompra();
+            RegistrarProovedor ToLogin = new RegistrarProovedor();
             this.Hide();
             ToLogin.Show();
         }

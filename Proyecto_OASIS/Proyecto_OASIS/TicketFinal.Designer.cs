@@ -143,6 +143,7 @@
             this.Name = "TicketFinal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TicketFinal";
+            this.Load += new System.EventHandler(this.TicketFinal_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
