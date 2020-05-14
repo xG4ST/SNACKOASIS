@@ -26,10 +26,5 @@ namespace Proyecto_OASIS
         {
             lbhora.Text = DateTime.Now.ToString("hh:mm:ss dddd MMMM yyy ");
         }
-
-        private void RegistrarCompra_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
