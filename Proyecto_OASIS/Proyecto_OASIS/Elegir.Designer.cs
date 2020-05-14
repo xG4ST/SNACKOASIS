@@ -154,10 +154,9 @@
             this.label5.Size = new System.Drawing.Size(922, 144);
             this.label5.TabIndex = 31;
             this.label5.Text = "REGISTRAR PROVEEDOR";
-<<<<<<< HEAD
+
             this.label5.Click += new System.EventHandler(this.Label5_Click);
-=======
->>>>>>> f48ea88426c8abac6867623ad5f833f15a07d13f
+
             // 
             // Elegir
             // 
