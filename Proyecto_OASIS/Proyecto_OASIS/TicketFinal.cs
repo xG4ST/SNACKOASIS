@@ -52,5 +52,10 @@ namespace Proyecto_OASIS
         {
 
         }
+
+        private void TicketFinal_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

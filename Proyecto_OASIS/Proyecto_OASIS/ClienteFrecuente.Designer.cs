@@ -50,6 +50,7 @@
             this.label2.Size = new System.Drawing.Size(1240, 216);
             this.label2.TabIndex = 9;
             this.label2.Text = "NOMBRE DEL CLIENTE";
+            this.label2.Click += new System.EventHandler(this.Label2_Click);
             // 
             // lbhora
             // 

@@ -69,3 +69,5 @@ C:\Users\cesar\source\repos\SNACKOASIS\Proyecto_OASIS\Proyecto_OASIS\obj\Debug\P
 C:\Users\cesar\source\repos\SNACKOASIS\Proyecto_OASIS\Proyecto_OASIS\obj\Debug\Proyecto_OASIS.csproj.CopyComplete
 C:\Users\cesar\source\repos\SNACKOASIS\Proyecto_OASIS\Proyecto_OASIS\obj\Debug\Proyecto_OASIS.exe
 C:\Users\cesar\source\repos\SNACKOASIS\Proyecto_OASIS\Proyecto_OASIS\obj\Debug\Proyecto_OASIS.pdb
+C:\Users\gus64\source\repos\SNACKOASIS\Proyecto_OASIS\Proyecto_OASIS\obj\Debug\Proyecto_OASIS.RegistrarCompra.resources
+C:\Users\gus64\source\repos\SNACKOASIS\Proyecto_OASIS\Proyecto_OASIS\obj\Debug\Proyecto_OASIS.RegistrarProovedor.resources
