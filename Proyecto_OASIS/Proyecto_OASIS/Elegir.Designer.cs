@@ -36,6 +36,7 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.labelx = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label3
@@ -73,7 +74,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("BigNoodleTitling", 140.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(0)))), ((int)(((byte)(109)))));
-            this.label2.Location = new System.Drawing.Point(12, 425);
+            this.label2.Location = new System.Drawing.Point(12, 617);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(826, 203);
             this.label2.TabIndex = 19;
@@ -117,13 +118,27 @@
             this.button1.BackColor = System.Drawing.Color.Yellow;
             this.button1.Font = new System.Drawing.Font("BigNoodleTitling", 89.99999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(0)))), ((int)(((byte)(109)))));
-            this.button1.Location = new System.Drawing.Point(580, 663);
+            this.button1.Location = new System.Drawing.Point(1066, 674);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(443, 136);
             this.button1.TabIndex = 29;
             this.button1.Text = "REGRESAR";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("BigNoodleTitling", 140.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(0)))), ((int)(((byte)(109)))));
+            this.label4.Location = new System.Drawing.Point(12, 430);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(1128, 203);
+            this.label4.TabIndex = 30;
+            this.label4.Text = "REGISTRAR COMPRA";
+            this.label4.Click += new System.EventHandler(this.Label4_Click);
             // 
             // Elegir
             // 
@@ -132,6 +147,7 @@
             this.BackgroundImage = global::Proyecto_OASIS.Properties.Resources.Fondo;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1584, 861);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.labelx);
             this.Controls.Add(this.lbhora);
@@ -156,5 +172,6 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label labelx;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label4;
     }
 }

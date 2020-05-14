@@ -47,7 +47,8 @@ namespace Proyecto_OASIS
             }
             else
             {
-                MySqlConnection conexion = Connection.GetConnection();
+                MySqlConnection conexion = new MySqlConnection("server = 127.0.0.1; database = snack_db; Uid = root; pwd = 2000;");
+                conexion.Open();
 
                 MySqlCommand compareClient = new MySqlCommand();
                 compareClient.CommandText = "SELECT * FROM client WHERE name_client = @newClientAccount.name_client";

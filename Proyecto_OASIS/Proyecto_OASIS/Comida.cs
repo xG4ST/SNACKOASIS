@@ -9,7 +9,7 @@ namespace Proyecto_OASIS
 {
     public partial class Comida : Form
     {
-        MySqlConnection conexion;
+      MySqlConnection conexion = new MySqlConnection("server = 127.0.0.1; database= snack_db; Uid = root; pwd = 2000;");
 
         public Comida()
         {
@@ -23,7 +23,8 @@ namespace Proyecto_OASIS
             //SELECT id_product,name_product FROM product
 
             string product = "Alitas";
-            conexion = Connection.GetConnection();
+
+            Connection.GetConnection();
             MySqlCommand cm = new MySqlCommand("SELECT id_prod, name_prod, des_prod FROM product WHERE name_prod = @product", conexion);
             cm.Parameters.AddWithValue("@product", product);
             MySqlDataAdapter da = new MySqlDataAdapter(cm);
@@ -44,7 +45,7 @@ namespace Proyecto_OASIS
         {
             string product = "Hamburguesa";
 
-            conexion = Connection.GetConnection();
+            conexion.Open();
             MySqlCommand cm = new MySqlCommand("SELECT id_prod, name_prod, des_prod FROM product WHERE name_prod = @product", conexion);
             cm.Parameters.AddWithValue("@product", product);
             MySqlDataAdapter da = new MySqlDataAdapter(cm);
@@ -65,7 +66,7 @@ namespace Proyecto_OASIS
         {
             string product = "Papas";
 
-            conexion = Connection.GetConnection();
+            conexion.Open();
             MySqlCommand cm = new MySqlCommand("SELECT id_prod, name_prod, des_prod FROM product WHERE name_prod = @product", conexion);
             cm.Parameters.AddWithValue("@product", product);
             MySqlDataAdapter da = new MySqlDataAdapter(cm);
@@ -86,7 +87,7 @@ namespace Proyecto_OASIS
         {
             string product = "Bebida";
 
-            conexion = Connection.GetConnection();
+            conexion.Open();
             MySqlCommand cm = new MySqlCommand("SELECT id_prod, name_prod, des_prod FROM product WHERE name_prod = @product", conexion);
             cm.Parameters.AddWithValue("@product", product);
             MySqlDataAdapter da = new MySqlDataAdapter(cm);
@@ -107,7 +108,7 @@ namespace Proyecto_OASIS
         {
             string product = "Postres";
 
-            conexion = Connection.GetConnection();
+            conexion.Open();
             MySqlCommand cm = new MySqlCommand("SELECT id_prod, name_prod, des_prod FROM product WHERE name_prod = @product", conexion);
             cm.Parameters.AddWithValue("@product", product);
             MySqlDataAdapter da = new MySqlDataAdapter(cm);
