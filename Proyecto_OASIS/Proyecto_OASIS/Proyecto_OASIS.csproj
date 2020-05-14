@@ -115,6 +115,12 @@
     <Compile Include="RegistrarProductos.Designer.cs">
       <DependentUpon>RegistrarProductos.cs</DependentUpon>
     </Compile>
+    <Compile Include="RegistrarProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistrarProveedor.Designer.cs">
+      <DependentUpon>RegistrarProveedor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Registro.cs">
       <SubType>Form</SubType>
     </Compile>

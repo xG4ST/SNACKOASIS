@@ -5,10 +5,10 @@ namespace Proyecto_OASIS.MySql
 {
     class Connection
     {
-        private static string Server = "localhost";
+        private static string Server = "127.0.0.1";
         private static string Database = "snack_db";
         private static string User = "root";
-        private static string Password = "";
+        private static string Password = "2000";
 
         private static string StrConnection = $"server={Server}; database={Database}; Uid={User}; pwd={Password}";
 
