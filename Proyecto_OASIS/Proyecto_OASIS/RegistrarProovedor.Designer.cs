@@ -76,7 +76,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("BigNoodleTitling", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(0)))), ((int)(((byte)(109)))));
-            this.label2.Location = new System.Drawing.Point(260, 557);
+            this.label2.Location = new System.Drawing.Point(242, 557);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(231, 70);
             this.label2.TabIndex = 32;
@@ -89,11 +89,11 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("BigNoodleTitling", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(0)))), ((int)(((byte)(109)))));
-            this.label1.Location = new System.Drawing.Point(340, 339);
+            this.label1.Location = new System.Drawing.Point(328, 339);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(133, 70);
+            this.label1.Size = new System.Drawing.Size(145, 70);
             this.label1.TabIndex = 30;
-            this.label1.Text = "EMAL:";
+            this.label1.Text = "EMAIL:";
             // 
             // label3
             // 
@@ -102,7 +102,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("BigNoodleTitling", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(0)))), ((int)(((byte)(109)))));
-            this.label3.Location = new System.Drawing.Point(88, 229);
+            this.label3.Location = new System.Drawing.Point(88, 228);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(385, 70);
             this.label3.TabIndex = 29;
