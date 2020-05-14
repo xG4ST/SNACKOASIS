@@ -71,5 +71,12 @@ namespace Proyecto_OASIS
         {
 
         }
+
+        private void Label5_Click(object sender, EventArgs e)
+        {
+            RegistrarCompra ToLogin = new RegistrarCompra();
+            this.Hide();
+            ToLogin.Show();
+        }
     }
 }
