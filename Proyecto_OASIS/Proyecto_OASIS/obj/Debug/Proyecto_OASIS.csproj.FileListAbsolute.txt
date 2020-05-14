@@ -97,3 +97,4 @@ C:\Users\PC\Desktop\SNACKOASIS\Proyecto_OASIS\Proyecto_OASIS\bin\Debug\Google.Pr
 C:\Users\PC\Desktop\SNACKOASIS\Proyecto_OASIS\Proyecto_OASIS\bin\Debug\BouncyCastle.Crypto.dll
 C:\Users\PC\Desktop\SNACKOASIS\Proyecto_OASIS\Proyecto_OASIS\bin\Debug\MySql.Data.xml
 C:\Users\PC\Desktop\SNACKOASIS\Proyecto_OASIS\Proyecto_OASIS\obj\Debug\Proyecto_OASIS.csproj.CopyComplete
+C:\Users\cesar\source\repos\SNACKOASIS\Proyecto_OASIS\Proyecto_OASIS\obj\Debug\Proyecto_OASIS.RegistrarProovedor.resources

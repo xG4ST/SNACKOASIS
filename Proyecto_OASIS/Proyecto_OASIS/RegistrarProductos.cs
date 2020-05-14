@@ -43,5 +43,10 @@ namespace Proyecto_OASIS
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

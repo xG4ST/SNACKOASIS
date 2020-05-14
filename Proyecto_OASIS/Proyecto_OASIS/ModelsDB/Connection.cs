@@ -8,7 +8,11 @@ namespace Proyecto_OASIS.MySql
         private static string Server = "127.0.0.1";
         private static string Database = "snack_db";
         private static string User = "root";
+<<<<<<< HEAD
+        private static string Password = "2000";
+=======
         private static string Password = "";
+>>>>>>> 4d23900074b981431a251e6f7e4c3c5ff26a15d2
 
         private static string StrConnection = $"server={Server}; database={Database}; Uid={User}; pwd={Password}";
 
