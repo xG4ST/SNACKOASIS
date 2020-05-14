@@ -160,7 +160,6 @@
             this.label5.Size = new System.Drawing.Size(267, 70);
             this.label5.TabIndex = 24;
             this.label5.Text = "SNACK OASIS";
-            this.label5.Click += new System.EventHandler(this.Label5_Click);
             // 
             // timer1
             // 
