@@ -82,5 +82,10 @@ namespace Proyecto_OASIS
             this.Hide();
             ToElegir.Show();
         }
+
+        private void Juego_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

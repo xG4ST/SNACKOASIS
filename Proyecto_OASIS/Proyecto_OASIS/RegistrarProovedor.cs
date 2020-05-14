@@ -26,5 +26,17 @@ namespace Proyecto_OASIS
         {
             lbhora.Text = DateTime.Now.ToString("hh:mm:ss dddd MMMM yyy ");
         }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            Elegir ToRegistro = new Elegir();
+            this.Hide();
+            ToRegistro.Show();
+        }
     }
 }
