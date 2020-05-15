@@ -16,7 +16,6 @@ namespace Proyecto_OASIS.ModelsDB
             MySqlCommand command = new MySqlCommand(String.Format("INSERT INTO provider(name_prov, email_prov, tel_prov, location_prov) values('{0}', '{1}', '{2}', '{3}')",
                 add.name_prov, add.email_prov, add.tel_prov, add.location_prov), Connection.GetConnection());
             devolver = command.ExecuteNonQuery();
-            Console.WriteLine(devolver);
             return devolver;
         }
     }
