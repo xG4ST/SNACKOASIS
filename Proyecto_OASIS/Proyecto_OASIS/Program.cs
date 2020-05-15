@@ -10,7 +10,7 @@ namespace Proyecto_OASIS
     {
         /// <summary>
         /// Punto de entrada principal para la aplicación.
-        /// </summary>
+        /// </summary> //
         [STAThread]
         static void Main()
         {

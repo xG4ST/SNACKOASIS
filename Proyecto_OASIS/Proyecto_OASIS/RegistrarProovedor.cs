@@ -47,7 +47,7 @@ namespace Proyecto_OASIS
                 MySqlConnection conexion = Connection.GetConnection();
 
                 MySqlCommand newProvider = new MySqlCommand();
-                newProvider.CommandText = "SELECT * FROM provider WHERE name_prov = @newProviderAccount.name_prov";
+                newProvider.CommandText = "SELECT * FROM provider WHERE name_prov   ";
                 newProvider.Parameters.AddWithValue("@newProviderAccount.name_prov", newProviderAccount.name_prov);
                 newProvider.Parameters.AddWithValue("@newProviderAccount.email_prov", newProviderAccount.email_prov);
                 newProvider.Parameters.AddWithValue("@newProvideraAccount.tel_prov", newProviderAccount.tel_prov);
@@ -82,6 +82,11 @@ namespace Proyecto_OASIS
             Elegir ToRegistro = new Elegir();
             this.Hide();
             ToRegistro.Show();
+        }
+
+        private void RegistrarProovedor_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -229,6 +229,7 @@
             this.Controls.Add(this.name_textbox);
             this.Name = "RegistrarProovedor";
             this.Text = "RegistrarProovedor";
+            this.Load += new System.EventHandler(this.RegistrarProovedor_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
