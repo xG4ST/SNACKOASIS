@@ -47,7 +47,7 @@ namespace Proyecto_OASIS
                 MySqlConnection conexion = Connection.GetConnection();
 
                 MySqlCommand newProvider = new MySqlCommand();
-                newProvider.CommandText = "SELECT * FROM provider";
+                newProvider.CommandText = "SELECT * FROM provider WHERE name_prov = @newProviderAccount.name_prov";
                 newProvider.Parameters.AddWithValue("@newProviderAccount.name_prov", newProviderAccount.name_prov);
                 newProvider.Parameters.AddWithValue("@newProviderAccount.email_prov", newProviderAccount.email_prov);
                 newProvider.Parameters.AddWithValue("@newProvideraAccount.tel_prov", newProviderAccount.tel_prov);
