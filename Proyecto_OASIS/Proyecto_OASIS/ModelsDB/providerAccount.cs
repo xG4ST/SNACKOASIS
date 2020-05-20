@@ -16,6 +16,11 @@ namespace Proyecto_OASIS.ModelsDB
         public string location_prov { get; set; }
 
         public providerAccount() { }
+        public providerAccount(int id, string name)
+        {
+            this.id_prov = id;
+            this.name_prov = name;
+        }
         public providerAccount(int id, string name, string email, string tel, string location)
         {
             this.id_prov = id;

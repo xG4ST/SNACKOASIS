@@ -92,8 +92,10 @@
     </Compile>
     <Compile Include="ModelsDB\clientAccount.cs" />
     <Compile Include="ModelsDB\Connection.cs" />
+    <Compile Include="ModelsDB\ProductAccount.cs" />
     <Compile Include="ModelsDB\providerAccount.cs" />
     <Compile Include="ModelsDB\registerNewClient.cs" />
+    <Compile Include="ModelsDB\RegisterNewProduct.cs" />
     <Compile Include="ModelsDB\RegisterNewProvider.cs" />
     <Compile Include="ModelsDB\registerNewUserAccount.cs" />
     <Compile Include="ModelsDB\userAccount.cs" />
