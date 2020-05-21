@@ -84,7 +84,6 @@ namespace Proyecto_OASIS
             ToRegistro.Show();
         }
 
-<<<<<<< HEAD
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
@@ -98,11 +97,11 @@ namespace Proyecto_OASIS
                 e.Handled = true;
             }
         }
-=======
+
         private void RegistrarProovedor_Load(object sender, EventArgs e)
         {
 
         }
->>>>>>> 1049b51c3e802b812dbbae935b26065f3d4d22d3
+
     }
 }

@@ -15,6 +15,7 @@ namespace Proyecto_OASIS
 {
     public partial class RegistrarProductos : Form
     {
+        List<providerAccount> listaProveedores;
         public RegistrarProductos()
         {
             InitializeComponent();
@@ -50,27 +51,25 @@ namespace Proyecto_OASIS
             //MySqlDataAdapter da = new MySqlDataAdapter(cm);
             MySqlDataReader consultar = cm.ExecuteReader();
 
-            providerAccount proveedor = new providerAccount();
-            List<providerAccount> listaProveedores;
-
+            listaProveedores = new List<providerAccount>();
+            
             while (consultar.Read())
             {
-                //proveedor.id_prov = consultar.GetInt32(0);
-                //proveedor.name_prov = consultar.GetString(1);
-                Console.WriteLine(consultar);
+                providerAccount proveedor = new providerAccount();
+                proveedor.id_prov = consultar.GetInt32(0);
+                proveedor.name_prov = consultar.GetString(1);
+                listaProveedores.Add(proveedor);
+                ComboBoxItem item = new ComboBoxItem();
+                item.Text = $"{proveedor.id_prov} - {proveedor.name_prov}";
+                item.Value = proveedor.id_prov;
+
+                comboBox1.Items.Add(item);
+                comboBox1.SelectedIndex = 0;
             }
 
-            //DataTable dt = new DataTable();
-            //da.Fill(dt);
-            //conexion.Close();
-
-            //DataRow fila = dt.NewRow();
-            //fila["name_prov"] = "Seleccionar";
-            //dt.Rows.InsertAt(fila, 0);
-
-            //comboBox1.ValueMember = "id_prod";
-            //comboBox1.DisplayMember = "name_prod";
-            //comboBox1.DataSource = dt;
+            Console.WriteLine(comboBox1.SelectedIndex);
+            Console.WriteLine(listaProveedores[comboBox1.SelectedIndex].id_prov);
+            Console.WriteLine(listaProveedores[comboBox1.SelectedIndex].name_prov);
 
         }
 
@@ -79,6 +78,8 @@ namespace Proyecto_OASIS
             ProductAccount newProductAccount = new ProductAccount();
             newProductAccount.name_prod = name_textbox.Text.Trim();
             newProductAccount.des_prod = textBox2.Text.Trim();
+
+
 
             //if (Single.TryParse(textBox1.Text, out float result))
             //{
@@ -112,41 +113,37 @@ namespace Proyecto_OASIS
 
             newProductAccount.stock_prod = 0;
 
+            int providerSelected = listaProveedores[comboBox1.SelectedIndex].id_prov;
+
             if (string.IsNullOrEmpty(name_textbox.Text) || string.IsNullOrEmpty(textBox2.Text) || string.IsNullOrEmpty(textBox1.Text) || string.IsNullOrEmpty(textBox3.Text))
             {
                 MessageBox.Show("Los campos no pueden quedar vacios", "Registro Cliente", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                MySqlConnection conexion = Connection.GetConnection();
-
-                MySqlCommand registerNewProduct = new MySqlCommand();
-                registerNewProduct.CommandText = "SELECT * FROM product WHERE name_prod = @newProductAccount.name_prod";
-                registerNewProduct.Parameters.AddWithValue("@newProductAccount.name_prod", newProductAccount.name_prod);
-                registerNewProduct.Parameters.AddWithValue("@newProductAccount.des_prod", newProductAccount.des_prod);
-                registerNewProduct.Parameters.AddWithValue("@newProductAccount.price_prod", newProductAccount.price_prod);
-                registerNewProduct.Parameters.AddWithValue("@newProductAccount.purchasePrice_prod", newProductAccount.purchasePrice_prod);
-                registerNewProduct.Parameters.AddWithValue("@newProductAccount.stock_prod", newProductAccount.stock_prod);
-                registerNewProduct.Connection = conexion;
-
-                MySqlDataReader leer = registerNewProduct.ExecuteReader();
-                if (leer.Read())
+                try
                 {
-                    MessageBox.Show("El usuario ya existe", "Registro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MySqlConnection conexion = Connection.GetConnection();
+                    MySqlCommand comm = conexion.CreateCommand();
+                    comm.CommandText = "INSERT INTO `product` (name_prod, des_prod, price_prod, purchasePrice_prod, stock_prod, provider_id_prov) VALUES(@name, @description, @price, @pricePurchase, @stock, @provider)";
+                    comm.Parameters.AddWithValue("@name", name_textbox.Text);
+                    comm.Parameters.AddWithValue("@description", textBox2.Text);
+                    comm.Parameters.AddWithValue("@price", double.Parse(textBox1.Text));
+                    comm.Parameters.AddWithValue("@pricePurchase", double.Parse(textBox3.Text));
+                    comm.Parameters.AddWithValue("@stock", 0);
+                    comm.Parameters.AddWithValue("@provider", providerSelected);
+                    comm.ExecuteNonQuery();
                     conexion.Close();
                 }
-                else
+                catch (Exception err)
                 {
-                    int resultado = RegisterNewProduct.agregar(newProductAccount);
-                    if (resultado > 0)
-                    {
-                        MessageBox.Show("Producto Registrado con Exito!", "Registro", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        MessageBox.Show("No se pudo guardar el Producto", "Registro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    Console.WriteLine(err);
                 }
+                name_textbox.Text = "";
+                textBox1.Text = "";
+                textBox2.Text = "";
+                textBox3.Text = "";
+                comboBox1.SelectedIndex = 0;
             }
         }
 
@@ -176,6 +173,31 @@ namespace Proyecto_OASIS
             {
                 e.Handled = true;
             }
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void name_textbox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
