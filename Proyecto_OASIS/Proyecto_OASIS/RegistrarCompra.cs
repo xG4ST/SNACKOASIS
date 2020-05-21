@@ -103,14 +103,18 @@ namespace Proyecto_OASIS
                 if(noRows > 0)
                 {
                     Console.WriteLine($"Compra registrada con exito");
+                    MessageBox.Show("Compra registrada con exito, su stock ha sido actualizado", "Compra realizada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    reset();
                 }
                 else
                 {
                     Console.WriteLine($"No se realizo la compra");
+                    MessageBox.Show("Hubo un error en la transaccion", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             } else
             {
                 Console.WriteLine("No hay nada en el carrito");
+                MessageBox.Show("Agregue algunos articulos antes de confirmar", "Carrito vacio", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -180,8 +184,8 @@ namespace Proyecto_OASIS
         private void sumarTotal(double subtotal)
         {
             double nuevoTotal = Double.Parse(label5.Text.Replace("$", "")) + subtotal;
-            
-            label5.Text = $"${nuevoTotal}";
+            string total = string.Format("{0:0.00}", nuevoTotal);
+            label5.Text = $"${total}";
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
@@ -213,6 +217,19 @@ namespace Proyecto_OASIS
         {
             n = e.RowIndex;
             Console.WriteLine(n);
+        }
+
+        private void reset()
+        {
+            carrito.Clear();
+            dataGridView1.Rows.Clear();
+            label5.Text = "$0.00";
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            reset();
+            MessageBox.Show("Compra cancelada, los articulos fueron eliminados", "Compra cancelada", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
