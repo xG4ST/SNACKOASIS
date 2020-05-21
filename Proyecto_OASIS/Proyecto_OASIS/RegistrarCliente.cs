@@ -17,7 +17,13 @@ namespace Proyecto_OASIS
         public Registrar_Cliente()
         {
             InitializeComponent();
+            
+
         }
+
+       
+
+
 
         private void Lbhora_Click(object sender, EventArgs e)
         {
