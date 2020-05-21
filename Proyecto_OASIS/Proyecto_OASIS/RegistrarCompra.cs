@@ -102,18 +102,15 @@ namespace Proyecto_OASIS
 
                 if(noRows > 0)
                 {
-                    Console.WriteLine($"Compra registrada con exito");
                     MessageBox.Show("Compra registrada con exito, su stock ha sido actualizado", "Compra realizada", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     reset();
                 }
                 else
                 {
-                    Console.WriteLine($"No se realizo la compra");
                     MessageBox.Show("Hubo un error en la transaccion", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             } else
             {
-                Console.WriteLine("No hay nada en el carrito");
                 MessageBox.Show("Agregue algunos articulos antes de confirmar", "Carrito vacio", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
