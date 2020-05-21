@@ -98,14 +98,14 @@ namespace Proyecto_OASIS
             MySqlCommand cm = new MySqlCommand("SELECT id_prov, name_prov FROM provider", conexion);
             MySqlDataReader consultar = cm.ExecuteReader();
 
-            while (reader.Read())
-            {
-                tabla.AddCell(new Cell().Add(new Paragraph(reader[""].ToString()).SetFont(fontContenido)));
-                tabla.AddCell(new Cell().Add(new Paragraph(reader[""].ToString()).SetFont(fontContenido)));
-                tabla.AddCell(new Cell().Add(new Paragraph(reader[""].ToString()).SetFont(fontContenido)));
-                tabla.AddCell(new Cell().Add(new Paragraph(reader[""].ToString()).SetFont(fontContenido)));
-                tabla.AddCell(new Cell().Add(new Paragraph(reader[""].ToString()).SetFont(fontContenido)));
-            }
+            //while (reader.Read())
+            //{
+            //    tabla.AddCell(new Cell().Add(new Paragraph(reader[""].ToString()).SetFont(fontContenido)));
+            //    tabla.AddCell(new Cell().Add(new Paragraph(reader[""].ToString()).SetFont(fontContenido)));
+            //    tabla.AddCell(new Cell().Add(new Paragraph(reader[""].ToString()).SetFont(fontContenido)));
+            //    tabla.AddCell(new Cell().Add(new Paragraph(reader[""].ToString()).SetFont(fontContenido)));
+            //    tabla.AddCell(new Cell().Add(new Paragraph(reader[""].ToString()).SetFont(fontContenido)));
+            //}
             documento.Add(tabla);
             documento.Close();
 

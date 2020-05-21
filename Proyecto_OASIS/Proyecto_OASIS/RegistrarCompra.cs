@@ -19,6 +19,7 @@ namespace Proyecto_OASIS
         List<providerAccount> listaProveedores;
         List<ProductAccount> listaProductos;
         List<ProductAccount> carrito;
+        private int n = -1;
 
         public RegistrarCompra()
         {
@@ -64,6 +65,53 @@ namespace Proyecto_OASIS
         private void Button1_Click(object sender, EventArgs e)
         {
             //TODO: Hacer transacciones
+            //Insertar compra
+            if (carrito.Count > 0)
+            {
+                int id;
+                MySqlConnection conexion = Connection.GetConnection();
+                MySqlCommand comm = conexion.CreateCommand();
+                comm.CommandText = "INSERT INTO purchase (datetime_pur, total_pur) VALUES (now(), 0)";
+                comm.ExecuteNonQuery();
+                id = Convert.ToInt32(comm.LastInsertedId);
+                conexion.Close();
+
+                //Insertar detalles de compra 
+                int noRows = -1;
+                foreach(ProductAccount producto in carrito)
+                {
+                    try
+                    {
+                        conexion = Connection.GetConnection();
+                        comm = conexion.CreateCommand();
+                        comm.CommandText = "INSERT INTO purchase_has_product (purchase_id_pur, product_id_prod, quantity_prod) VALUES (@id_pur, @id_prod, @quantity)";
+                        comm.Parameters.AddWithValue("@id_pur", id);
+                        comm.Parameters.AddWithValue("@id_prod", producto.id_prod);
+                        comm.Parameters.AddWithValue("@quantity", producto.items);
+                        noRows = comm.ExecuteNonQuery();
+                    }
+                    catch(Exception err)
+                    {
+                        Console.WriteLine(err);
+                    }
+                    finally
+                    {
+                        conexion.Close();
+                    }
+                }
+
+                if(noRows > 0)
+                {
+                    Console.WriteLine($"Compra registrada con exito");
+                }
+                else
+                {
+                    Console.WriteLine($"No se realizo la compra");
+                }
+            } else
+            {
+                Console.WriteLine("No hay nada en el carrito");
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -81,7 +129,7 @@ namespace Proyecto_OASIS
             //TODO: Mostrar productos del nuevo proveedor
             int id = listaProveedores[comboBox1.SelectedIndex].id_prov;
             MySqlConnection conexion = Connection.GetConnection();
-            MySqlCommand cm = new MySqlCommand("SELECT id_prod, name_prod, price_prod FROM product WHERE provider_id_prov = @id", conexion);
+            MySqlCommand cm = new MySqlCommand("SELECT id_prod, name_prod, purchasePrice_prod FROM product WHERE provider_id_prov = @id", conexion);
             cm.Parameters.AddWithValue("@id", id);
             MySqlDataReader consultar = cm.ExecuteReader();
 
@@ -110,6 +158,7 @@ namespace Proyecto_OASIS
         {
             if (comboBox2.Text != "" && numericUpDown1.Value != 0)
             {
+                listaProductos[comboBox2.SelectedIndex].items = Convert.ToInt32(numericUpDown1.Value);
                 //agregamos al carrito
                 carrito.Add(listaProductos[comboBox2.SelectedIndex]);
                 ProductAccount producto = listaProductos[comboBox2.SelectedIndex];
@@ -139,6 +188,31 @@ namespace Proyecto_OASIS
         {
             //numericUpDown1.Value = 0;
             //numericUpDown1.Maximum = listaProductos[comboBox2.SelectedIndex].stock_prod;
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+           
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if(n != -1)
+            {
+                dataGridView1.Rows.RemoveAt(n);
+                sumarTotal(carrito[n].purchasePrice_prod*carrito[n].items*-1);
+                carrito.RemoveAt(n);
+                for(int i = 0; i < carrito.Count; i++)
+                {
+                    Console.WriteLine(carrito[i].name_prod);
+                }
+            }
+        }
+
+        private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            n = e.RowIndex;
+            Console.WriteLine(n);
         }
     }
 }
