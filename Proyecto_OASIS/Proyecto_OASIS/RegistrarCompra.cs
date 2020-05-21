@@ -12,7 +12,6 @@ using Proyecto_OASIS.ModelsDB;
 using MySql.Data.MySqlClient;
 using Proyecto_OASIS.MySql;
 
-
 namespace Proyecto_OASIS
 {
     public partial class RegistrarCompra : Form
@@ -228,16 +227,6 @@ namespace Proyecto_OASIS
         {
             reset();
             MessageBox.Show("Compra cancelada, los articulos fueron eliminados", "Compra cancelada", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-        private void Label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Label6_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

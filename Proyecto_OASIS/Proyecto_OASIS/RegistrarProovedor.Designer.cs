@@ -230,7 +230,6 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.name_textbox);
             this.Name = "RegistrarProovedor";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegistrarProovedor";
             this.Load += new System.EventHandler(this.RegistrarProovedor_Load);
             this.ResumeLayout(false);

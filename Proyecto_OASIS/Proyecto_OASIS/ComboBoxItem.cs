@@ -8,7 +8,6 @@ namespace Proyecto_OASIS
 {
     public class ComboBoxItem
     {
-        //ComboBoxItem 
         public string Text { get; set; }
         public object Value { get; set; }
 

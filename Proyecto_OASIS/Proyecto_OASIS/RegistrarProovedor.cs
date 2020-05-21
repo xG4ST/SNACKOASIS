@@ -97,9 +97,11 @@ namespace Proyecto_OASIS
                 e.Handled = true;
             }
         }
+
         private void RegistrarProovedor_Load(object sender, EventArgs e)
         {
 
         }
+
     }
 }
