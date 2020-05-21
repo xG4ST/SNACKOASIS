@@ -33,13 +33,14 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.button2 = new System.Windows.Forms.Button();
             this.labelx = new System.Windows.Forms.Label();
             this.lbhora = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.button3 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // comboBox1
@@ -75,9 +76,9 @@
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(0)))), ((int)(((byte)(109)))));
             this.label2.Location = new System.Drawing.Point(33, 85);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(563, 113);
+            this.label2.Size = new System.Drawing.Size(303, 113);
             this.label2.TabIndex = 4;
-            this.label2.Text = "CLIENTE: X X X X X ";
+            this.label2.Text = "CLIENTE: ";
             // 
             // button1
             // 
@@ -85,22 +86,13 @@
             this.button1.BackColor = System.Drawing.Color.Yellow;
             this.button1.Font = new System.Drawing.Font("BigNoodleTitling", 71.99999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(0)))), ((int)(((byte)(109)))));
-            this.button1.Location = new System.Drawing.Point(1230, 723);
+            this.button1.Location = new System.Drawing.Point(1193, 723);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(309, 113);
+            this.button1.Size = new System.Drawing.Size(346, 113);
             this.button1.TabIndex = 12;
-            this.button1.Text = "ACEPTAR";
+            this.button1.Text = "CONFIRMAR";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.Button1_Click_1);
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(52, 346);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(1474, 321);
-            this.dataGridView2.TabIndex = 15;
             // 
             // button2
             // 
@@ -160,6 +152,27 @@
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.Button3_Click);
             // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("BigNoodleTitling", 77.99999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(0)))), ((int)(((byte)(109)))));
+            this.label1.Location = new System.Drawing.Point(288, 85);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(73, 113);
+            this.label1.TabIndex = 32;
+            this.label1.Text = "-";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(63, 366);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(1462, 319);
+            this.dataGridView1.TabIndex = 33;
+            // 
             // Comida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -167,11 +180,12 @@
             this.BackgroundImage = global::Proyecto_OASIS.Properties.Resources.Fondo;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1584, 861);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.lbhora);
             this.Controls.Add(this.labelx);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.comboBox2);
@@ -180,7 +194,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Comida";
             this.Load += new System.EventHandler(this.Comida_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -192,11 +206,12 @@
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label labelx;
         private System.Windows.Forms.Label lbhora;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

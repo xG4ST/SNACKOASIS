@@ -235,5 +235,10 @@ namespace Proyecto_OASIS
             reset();
             MessageBox.Show("Compra cancelada, los articulos fueron eliminados", "Compra cancelada", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        private void Label5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

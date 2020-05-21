@@ -36,7 +36,7 @@ namespace Proyecto_OASIS
             fila["des_prod"] = "Seleccionar";
             dt.Rows.InsertAt(fila, 0);
 
-            comboBox2.ValueMember = "id_prod";
+            comboBox2.ValueMember = "name_product";
             comboBox2.DisplayMember = "des_prod";
             comboBox2.DataSource = dt;
         }
@@ -57,7 +57,7 @@ namespace Proyecto_OASIS
             fila["des_prod"] = "Seleccionar";
             dt.Rows.InsertAt(fila, 0);
 
-            comboBox2.ValueMember = "id_prod";
+            comboBox2.ValueMember = "name_product";
             comboBox2.DisplayMember = "des_prod";
             comboBox2.DataSource = dt;
         }
@@ -78,7 +78,7 @@ namespace Proyecto_OASIS
             fila["des_prod"] = "Seleccionar";
             dt.Rows.InsertAt(fila, 0);
 
-            comboBox2.ValueMember = "id_prod";
+            comboBox2.ValueMember = "name_product";
             comboBox2.DisplayMember = "des_prod";
             comboBox2.DataSource = dt;
         }
@@ -99,7 +99,7 @@ namespace Proyecto_OASIS
             fila["des_prod"] = "Seleccionar";
             dt.Rows.InsertAt(fila, 0);
 
-            comboBox2.ValueMember = "id_prod";
+            comboBox2.ValueMember = "name_product";
             comboBox2.DisplayMember = "des_prod";
             comboBox2.DataSource = dt;
         }
@@ -120,7 +120,7 @@ namespace Proyecto_OASIS
             fila["des_prod"] = "Seleccionar";
             dt.Rows.InsertAt(fila, 0);
 
-            comboBox2.ValueMember = "id_prod";
+            comboBox2.ValueMember = "name_product";
             comboBox2.DisplayMember = "des_prod";
             comboBox2.DataSource = dt;
         }
