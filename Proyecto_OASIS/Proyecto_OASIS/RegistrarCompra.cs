@@ -80,7 +80,7 @@ namespace Proyecto_OASIS
             //TODO: Mostrar productos del nuevo proveedor
             int id = listaProveedores[comboBox1.SelectedIndex].id_prov;
             MySqlConnection conexion = Connection.GetConnection();
-            MySqlCommand cm = new MySqlCommand("SELECT id_prod, name_prod, stock_prod FROM product WHERE provider_id_prov = @id && stock_prod > 0", conexion);
+            MySqlCommand cm = new MySqlCommand("SELECT id_prod, name_prod, stock_prod FROM product WHERE provider_id_prov = @id", conexion);
             cm.Parameters.AddWithValue("@id", id);
             MySqlDataReader consultar = cm.ExecuteReader();
 
@@ -115,8 +115,8 @@ namespace Proyecto_OASIS
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            numericUpDown1.Value = 0;
-            numericUpDown1.Maximum = listaProductos[comboBox2.SelectedIndex].stock_prod;
+            //numericUpDown1.Value = 0;
+            //numericUpDown1.Maximum = listaProductos[comboBox2.SelectedIndex].stock_prod;
         }
     }
 }
