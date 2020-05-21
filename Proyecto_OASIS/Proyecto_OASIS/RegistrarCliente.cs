@@ -14,6 +14,7 @@ namespace Proyecto_OASIS
 {
     public partial class Registrar_Cliente : Form
     {
+        clientAccount cliente;
         public Registrar_Cliente()
         {
             InitializeComponent();
@@ -36,10 +37,6 @@ namespace Proyecto_OASIS
 
         private void Register_button_Click(object sender, EventArgs e)
         {
-            clientAccount newClientAccount = new clientAccount();
-            newClientAccount.name_client = client_textbox.Text.Trim();
-            newClientAccount.email_client = email_textbox.Text.Trim();
-            newClientAccount.tel_client = tel_textbox.Text.Trim();
 
             if (string.IsNullOrEmpty(client_textbox.Text) || string.IsNullOrEmpty(email_textbox.Text) || string.IsNullOrEmpty(tel_textbox.Text))
             {
@@ -48,12 +45,11 @@ namespace Proyecto_OASIS
             else
             {
                 MySqlConnection conexion = Connection.GetConnection();
-
                 MySqlCommand compareClient = new MySqlCommand();
                 compareClient.CommandText = "SELECT * FROM client WHERE name_client = @newClientAccount.name_client";
-                compareClient.Parameters.AddWithValue("@newClientAccount.name_client", newClientAccount.name_client);
-                compareClient.Parameters.AddWithValue("@newClientAccount.email_client", newClientAccount.email_client);
-                compareClient.Parameters.AddWithValue("@newClientAccount.tel_client", newClientAccount.tel_client);
+                compareClient.Parameters.AddWithValue("@newClientAccount.name_client", cliente.name_client);
+                compareClient.Parameters.AddWithValue("@newClientAccount.email_client", cliente.email_client);
+                compareClient.Parameters.AddWithValue("@newClientAccount.tel_client", cliente.tel_client);
                 compareClient.Connection = conexion;
 
                 MySqlDataReader leer = compareClient.ExecuteReader();
@@ -64,7 +60,12 @@ namespace Proyecto_OASIS
                 }
                 else
                 {
-                    int resultado = registerNewClient.agregar(newClientAccount);
+                    cliente = new clientAccount();
+                    cliente.name_client = client_textbox.Text.Trim();
+                    cliente.email_client = email_textbox.Text.Trim();
+                    cliente.tel_client = tel_textbox.Text.Trim();
+                    int resultado = Convert.ToInt32(registerNewClient.agregar(cliente));
+                    cliente.id_client = resultado;
                     if (resultado > 0)
                     {
                         MessageBox.Show("Cliente Registrado con Exito!", "Registro", MessageBoxButtons.OK, MessageBoxIcon.Information);

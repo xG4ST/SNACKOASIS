@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Proyecto_OASIS.ModelsDB;
+using Proyecto_OASIS.MySql;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +14,8 @@ namespace Proyecto_OASIS
 {
     public partial class Confirmacion_de_pedido : Form
     {
+        List<ProductAccount> carrito;
+
         public Confirmacion_de_pedido()
         {
             InitializeComponent();

@@ -200,13 +200,20 @@ namespace Proyecto_OASIS
         {
             if(n != -1)
             {
-                dataGridView1.Rows.RemoveAt(n);
-                sumarTotal(carrito[n].purchasePrice_prod*carrito[n].items*-1);
-                carrito.RemoveAt(n);
-                for(int i = 0; i < carrito.Count; i++)
+                try
                 {
-                    Console.WriteLine(carrito[i].name_prod);
+                    dataGridView1.Rows.RemoveAt(n);
+                    sumarTotal(carrito[n].purchasePrice_prod * carrito[n].items * -1);
+                    carrito.RemoveAt(n);
+                    for (int i = 0; i < carrito.Count; i++)
+                    {
+                        Console.WriteLine(carrito[i].name_prod);
+                    }
+                } catch (System.InvalidOperationException err)
+                {
+                    MessageBox.Show("La nueva fila sin confirmar no se puede eliminar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+                
             }
         }
 
