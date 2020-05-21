@@ -48,7 +48,6 @@ namespace Proyecto_OASIS
             MySqlConnection conexion = Connection.GetConnection();
 
             MySqlCommand cm = new MySqlCommand("SELECT id_prov, name_prov FROM provider", conexion);
-            //MySqlDataAdapter da = new MySqlDataAdapter(cm);
             MySqlDataReader consultar = cm.ExecuteReader();
 
             listaProveedores = new List<providerAccount>();
@@ -66,10 +65,6 @@ namespace Proyecto_OASIS
                 comboBox1.Items.Add(item);
                 comboBox1.SelectedIndex = 0;
             }
-
-            Console.WriteLine(comboBox1.SelectedIndex);
-            Console.WriteLine(listaProveedores[comboBox1.SelectedIndex].id_prov);
-            Console.WriteLine(listaProveedores[comboBox1.SelectedIndex].name_prov);
 
         }
 
