@@ -39,6 +39,7 @@
             this.lbhora = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.button3 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,9 +76,10 @@
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(0)))), ((int)(((byte)(109)))));
             this.label2.Location = new System.Drawing.Point(33, 85);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(563, 113);
+            this.label2.Size = new System.Drawing.Size(286, 113);
             this.label2.TabIndex = 4;
-            this.label2.Text = "CLIENTE: X X X X X ";
+            this.label2.Text = "CLIENTE:";
+            this.label2.Click += new System.EventHandler(this.Label2_Click);
             // 
             // button1
             // 
@@ -101,6 +103,7 @@
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(1474, 321);
             this.dataGridView2.TabIndex = 15;
+            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView2_CellContentClick);
             // 
             // button2
             // 
@@ -114,6 +117,7 @@
             this.button2.TabIndex = 16;
             this.button2.Text = "Registrar";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
             // labelx
             // 
@@ -160,6 +164,19 @@
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.Button3_Click);
             // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("BigNoodleTitling", 77.99999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(0)))), ((int)(((byte)(109)))));
+            this.label1.Location = new System.Drawing.Point(306, 85);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(73, 113);
+            this.label1.TabIndex = 32;
+            this.label1.Text = "-";
+            // 
             // Comida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -167,6 +184,7 @@
             this.BackgroundImage = global::Proyecto_OASIS.Properties.Resources.Fondo;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1584, 861);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.lbhora);
             this.Controls.Add(this.labelx);
@@ -198,5 +216,6 @@
         private System.Windows.Forms.Label lbhora;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label1;
     }
 }

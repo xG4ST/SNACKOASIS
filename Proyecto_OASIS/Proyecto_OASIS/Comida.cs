@@ -57,7 +57,7 @@ namespace Proyecto_OASIS
             fila["des_prod"] = "Seleccionar";
             dt.Rows.InsertAt(fila, 0);
 
-            comboBox2.ValueMember = "id_prod";
+            comboBox2.ValueMember = "name_prod";
             comboBox2.DisplayMember = "des_prod";
             comboBox2.DataSource = dt;
         }
@@ -78,7 +78,7 @@ namespace Proyecto_OASIS
             fila["des_prod"] = "Seleccionar";
             dt.Rows.InsertAt(fila, 0);
 
-            comboBox2.ValueMember = "id_prod";
+            comboBox2.ValueMember = "name_prod";
             comboBox2.DisplayMember = "des_prod";
             comboBox2.DataSource = dt;
         }
@@ -99,7 +99,7 @@ namespace Proyecto_OASIS
             fila["des_prod"] = "Seleccionar";
             dt.Rows.InsertAt(fila, 0);
 
-            comboBox2.ValueMember = "id_prod";
+            comboBox2.ValueMember = "name_prod";
             comboBox2.DisplayMember = "des_prod";
             comboBox2.DataSource = dt;
         }
@@ -120,7 +120,7 @@ namespace Proyecto_OASIS
             fila["des_prod"] = "Seleccionar";
             dt.Rows.InsertAt(fila, 0);
 
-            comboBox2.ValueMember = "id_prod";
+            comboBox2.ValueMember = "name_prod";
             comboBox2.DisplayMember = "des_prod";
             comboBox2.DataSource = dt;
         }
@@ -260,6 +260,21 @@ namespace Proyecto_OASIS
             Elegir ToElegir = new Elegir();
             this.Hide();
             ToElegir.Show();
+        }
+
+        private void Label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void DataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
