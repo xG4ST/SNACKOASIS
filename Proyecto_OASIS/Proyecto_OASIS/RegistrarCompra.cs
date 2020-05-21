@@ -74,6 +74,7 @@ namespace Proyecto_OASIS
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            numericUpDown1.Value = 0;
             comboBox2.Items.Clear();
             listaProductos.Clear();
             //TODO: Mostrar productos del nuevo proveedor
