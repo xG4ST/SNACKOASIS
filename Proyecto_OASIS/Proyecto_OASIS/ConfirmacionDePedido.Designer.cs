@@ -111,7 +111,7 @@
             this.button2.BackColor = System.Drawing.Color.Yellow;
             this.button2.Font = new System.Drawing.Font("BigNoodleTitling", 71.99999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(0)))), ((int)(((byte)(109)))));
-            this.button2.Location = new System.Drawing.Point(91, 197);
+            this.button2.Location = new System.Drawing.Point(83, 197);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(337, 113);
             this.button2.TabIndex = 22;
