@@ -12,9 +12,10 @@ namespace Proyecto_OASIS.ModelsDB
         public int id_prod { get; set; }
         public string name_prod { get; set; }
         public string des_prod { get; set; }
-        public float price_prod { get; set; }
-        public float purchasePrice_prod { get; set; }
+        public double price_prod { get; set; }
+        public double purchasePrice_prod { get; set; }
         public int stock_prod { get; set; }
+        public int items;
 
         public ProductAccount() { }
         public ProductAccount(int id, string name, string des, float price, float purchase, int stock)

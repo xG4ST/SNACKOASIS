@@ -60,6 +60,7 @@
     <Compile Include="ClienteFrecuente.Designer.cs">
       <DependentUpon>ClienteFrecuente.cs</DependentUpon>
     </Compile>
+    <Compile Include="ComboBoxItem.cs" />
     <Compile Include="Comida.cs">
       <SubType>Form</SubType>
     </Compile>

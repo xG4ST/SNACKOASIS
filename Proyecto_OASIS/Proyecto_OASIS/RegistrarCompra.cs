@@ -12,6 +12,7 @@ using Proyecto_OASIS.ModelsDB;
 using MySql.Data.MySqlClient;
 using Proyecto_OASIS.MySql;
 
+
 namespace Proyecto_OASIS
 {
     public partial class RegistrarCompra : Form
