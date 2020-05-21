@@ -72,7 +72,6 @@ C:\Users\cesar\source\repos\SNACKOASIS\Proyecto_OASIS\Proyecto_OASIS\obj\Debug\P
 C:\Users\gus64\source\repos\SNACKOASIS\Proyecto_OASIS\Proyecto_OASIS\obj\Debug\Proyecto_OASIS.RegistrarCompra.resources
 C:\Users\gus64\source\repos\SNACKOASIS\Proyecto_OASIS\Proyecto_OASIS\obj\Debug\Proyecto_OASIS.RegistrarProovedor.resources
 C:\Users\PC\Desktop\SNACKOASIS\Proyecto_OASIS\Proyecto_OASIS\obj\Debug\Proyecto_OASIS.csprojAssemblyReference.cache
-C:\Users\PC\Desktop\SNACKOASIS\Proyecto_OASIS\Proyecto_OASIS\obj\Debug\Proyecto_OASIS.ClienteFrecuente.resources
 C:\Users\PC\Desktop\SNACKOASIS\Proyecto_OASIS\Proyecto_OASIS\obj\Debug\Proyecto_OASIS.Comida.resources
 C:\Users\PC\Desktop\SNACKOASIS\Proyecto_OASIS\Proyecto_OASIS\obj\Debug\Proyecto_OASIS.Confirmacion_de_pedido.resources
 C:\Users\PC\Desktop\SNACKOASIS\Proyecto_OASIS\Proyecto_OASIS\obj\Debug\Proyecto_OASIS.Elegir.resources

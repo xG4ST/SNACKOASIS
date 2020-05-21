@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Proyecto_OASIS.MySql
 {
-    class clientAccount
+    public class clientAccount
     {
         public int id_client { get; set; }
         public string name_client { get; set; }

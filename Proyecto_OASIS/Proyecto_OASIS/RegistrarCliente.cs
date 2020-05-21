@@ -22,10 +22,6 @@ namespace Proyecto_OASIS
 
         }
 
-       
-
-
-
         private void Lbhora_Click(object sender, EventArgs e)
         {
             lbhora.Text = DateTime.Now.ToString("hh:mm:ss dddd MMMM yyy ");
@@ -50,43 +46,28 @@ namespace Proyecto_OASIS
             }
             else
             {
-                MySqlConnection conexion = Connection.GetConnection();
-                MySqlCommand compareClient = new MySqlCommand();
-                compareClient.CommandText = "SELECT * FROM client WHERE name_client = @newClientAccount.name_client";
-                compareClient.Parameters.AddWithValue("@newClientAccount.name_client", cliente.name_client);
-                compareClient.Parameters.AddWithValue("@newClientAccount.email_client", cliente.email_client);
-                compareClient.Parameters.AddWithValue("@newClientAccount.tel_client", cliente.tel_client);
-                compareClient.Connection = conexion;
+                cliente = new clientAccount();
+                cliente.name_client = client_textbox.Text.Trim();
+                cliente.email_client = email_textbox.Text.Trim();
+                cliente.tel_client = tel_textbox.Text.Trim();
 
-                MySqlDataReader leer = compareClient.ExecuteReader();
-                if (leer.Read())
+                int resultado = Convert.ToInt32(registerNewClient.agregar(cliente));
+                cliente.id_client = resultado;
+                if (resultado > 0)
                 {
-                    MessageBox.Show("El usuario ya existe", "Registro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    conexion.Close();
+                    MessageBox.Show("Cliente Registrado con Exito!", "Registro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //Menu ToMenu = new Menu();
+                    //this.Hide();
+                    //ToMenu.Show();
+                    Comida ToComida = new Comida(cliente);
+                    this.Hide();
+                    ToComida.Show();
                 }
                 else
                 {
-                    cliente = new clientAccount();
-                    cliente.name_client = client_textbox.Text.Trim();
-                    cliente.email_client = email_textbox.Text.Trim();
-                    cliente.tel_client = tel_textbox.Text.Trim();
-                    int resultado = Convert.ToInt32(registerNewClient.agregar(cliente));
-                    cliente.id_client = resultado;
-                    if (resultado > 0)
-                    {
-                        MessageBox.Show("Cliente Registrado con Exito!", "Registro", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        //Menu ToMenu = new Menu();
-                        //this.Hide();
-                        //ToMenu.Show();
-                        Comida ToComida = new Comida();
-                        this.Hide();
-                        ToComida.Show();
-                    }
-                    else
-                    {
-                        MessageBox.Show("No se pudo guardar a el Cliente", "Registro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    MessageBox.Show("No se pudo guardar a el Cliente", "Registro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+              
             }
         }
 

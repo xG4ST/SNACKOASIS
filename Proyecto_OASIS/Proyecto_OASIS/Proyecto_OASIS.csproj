@@ -90,12 +90,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClienteFrecuente.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ClienteFrecuente.Designer.cs">
-      <DependentUpon>ClienteFrecuente.cs</DependentUpon>
-    </Compile>
     <Compile Include="ComboBoxItem.cs" />
     <Compile Include="Comida.cs">
       <SubType>Form</SubType>
@@ -174,9 +168,6 @@
     <Compile Include="TicketFinal.Designer.cs">
       <DependentUpon>TicketFinal.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ClienteFrecuente.resx">
-      <DependentUpon>ClienteFrecuente.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Comida.resx">
       <DependentUpon>Comida.cs</DependentUpon>
     </EmbeddedResource>
