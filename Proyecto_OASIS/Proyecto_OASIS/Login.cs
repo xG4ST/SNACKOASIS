@@ -8,6 +8,8 @@ namespace Proyecto_OASIS
 {
     public partial class Login : Form
     {
+        public static int idUsuario;
+        public static string nombreUsuario;
         public Login()
         {
             InitializeComponent();
@@ -35,8 +37,12 @@ namespace Proyecto_OASIS
                 MySqlDataReader leer = login.ExecuteReader();
                 if (leer.Read())
                 {
+                    Login.idUsuario = leer.GetInt32(0);
+                    Login.nombreUsuario = leer.GetString(1);
+                    Console.WriteLine(Login.idUsuario);
                     MessageBox.Show("Bienvenido", "Log In", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Elegir ToMenu = new Elegir();
+
                     this.Hide();
                     ToMenu.Show();
                     conexion.Close();

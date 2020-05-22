@@ -40,13 +40,15 @@
             this.button3 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
             this.idProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcionProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precioProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
+            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -179,44 +181,15 @@
             this.idProducto,
             this.producto,
             this.descripcionProducto,
-            this.precioProducto});
+            this.precioProducto,
+            this.cantidad,
+            this.subtotal});
             this.dataGridView1.Location = new System.Drawing.Point(63, 366);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1443, 319);
+            this.dataGridView1.Size = new System.Drawing.Size(1221, 319);
             this.dataGridView1.TabIndex = 33;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             this.dataGridView1.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseClick);
-            // 
-            // idProducto
-            // 
-            this.idProducto.Frozen = true;
-            this.idProducto.HeaderText = "ID";
-            this.idProducto.Name = "idProducto";
-            this.idProducto.ReadOnly = true;
-            this.idProducto.Width = 350;
-            // 
-            // producto
-            // 
-            this.producto.Frozen = true;
-            this.producto.HeaderText = "Producto";
-            this.producto.Name = "producto";
-            this.producto.ReadOnly = true;
-            this.producto.Width = 350;
-            // 
-            // descripcionProducto
-            // 
-            this.descripcionProducto.Frozen = true;
-            this.descripcionProducto.HeaderText = "Descripcion";
-            this.descripcionProducto.Name = "descripcionProducto";
-            this.descripcionProducto.ReadOnly = true;
-            this.descripcionProducto.Width = 350;
-            // 
-            // precioProducto
-            // 
-            this.precioProducto.Frozen = true;
-            this.precioProducto.HeaderText = "Precio";
-            this.precioProducto.Name = "precioProducto";
-            this.precioProducto.ReadOnly = true;
-            this.precioProducto.Width = 350;
             // 
             // label5
             // 
@@ -250,7 +223,7 @@
             this.button4.BackColor = System.Drawing.Color.Yellow;
             this.button4.Font = new System.Drawing.Font("BigNoodleTitling", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(0)))), ((int)(((byte)(109)))));
-            this.button4.Location = new System.Drawing.Point(1371, 312);
+            this.button4.Location = new System.Drawing.Point(1290, 366);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(135, 48);
             this.button4.TabIndex = 52;
@@ -258,6 +231,54 @@
             this.button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // idProducto
+            // 
+            this.idProducto.Frozen = true;
+            this.idProducto.HeaderText = "ID";
+            this.idProducto.Name = "idProducto";
+            this.idProducto.ReadOnly = true;
+            this.idProducto.Width = 150;
+            // 
+            // producto
+            // 
+            this.producto.Frozen = true;
+            this.producto.HeaderText = "Producto";
+            this.producto.Name = "producto";
+            this.producto.ReadOnly = true;
+            this.producto.Width = 250;
+            // 
+            // descripcionProducto
+            // 
+            this.descripcionProducto.Frozen = true;
+            this.descripcionProducto.HeaderText = "Descripcion";
+            this.descripcionProducto.Name = "descripcionProducto";
+            this.descripcionProducto.ReadOnly = true;
+            this.descripcionProducto.Width = 250;
+            // 
+            // precioProducto
+            // 
+            this.precioProducto.Frozen = true;
+            this.precioProducto.HeaderText = "Precio";
+            this.precioProducto.Name = "precioProducto";
+            this.precioProducto.ReadOnly = true;
+            this.precioProducto.Width = 225;
+            // 
+            // cantidad
+            // 
+            this.cantidad.Frozen = true;
+            this.cantidad.HeaderText = "Cantidad";
+            this.cantidad.Name = "cantidad";
+            this.cantidad.ReadOnly = true;
+            this.cantidad.Width = 150;
+            // 
+            // subtotal
+            // 
+            this.subtotal.Frozen = true;
+            this.subtotal.HeaderText = "Subtotal";
+            this.subtotal.Name = "subtotal";
+            this.subtotal.ReadOnly = true;
+            this.subtotal.Width = 150;
             // 
             // Comida
             // 
@@ -302,12 +323,14 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.DataGridViewTextBoxColumn idProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn producto;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcionProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn precioProducto;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn subtotal;
     }
 }

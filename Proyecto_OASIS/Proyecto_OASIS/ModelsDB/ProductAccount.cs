@@ -7,7 +7,7 @@ using MySql.Data.MySqlClient;
 
 namespace Proyecto_OASIS.ModelsDB
 {
-    class ProductAccount
+    public class ProductAccount
     {
         public int id_prod { get; set; }
         public string name_prod { get; set; }

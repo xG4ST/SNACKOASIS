@@ -20,6 +20,11 @@ namespace Proyecto_OASIS
         {
             InitializeComponent();
         }
+        public Confirmacion_de_pedido(List<ProductAccount> carrito)
+        {
+            this.carrito = carrito;
+            InitializeComponent();
+        }
 
         private void Timer1_Tick(object sender, EventArgs e)
         {
@@ -40,7 +45,7 @@ namespace Proyecto_OASIS
 
         private void Confirmacion_de_pedido_Load(object sender, EventArgs e)
         {
-
+            label4.Text = Login.nombreUsuario;
         }
 
         private void Button3_Click(object sender, EventArgs e)

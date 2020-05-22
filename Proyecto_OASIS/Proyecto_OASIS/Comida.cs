@@ -62,7 +62,7 @@ namespace Proyecto_OASIS
             comboBox2.Items.Clear();
             listaProductos.Clear();
             conexion = Connection.GetConnection();
-            MySqlCommand cm = new MySqlCommand("SELECT id_prod, name_prod, des_prod, price_prod FROM product WHERE name_prod = @product", conexion);
+            MySqlCommand cm = new MySqlCommand("SELECT id_prod, name_prod, des_prod, price_prod, stock_prod FROM product WHERE name_prod = @product && stock_prod > 0", conexion);
             cm.Parameters.AddWithValue("@product", product);
             MySqlDataReader consultar = cm.ExecuteReader();
             while (consultar.Read())
@@ -72,6 +72,7 @@ namespace Proyecto_OASIS
                 producto.name_prod = consultar.GetString(1);
                 producto.des_prod = consultar.GetString(2);
                 producto.price_prod = consultar.GetDouble(3);
+                producto.stock_prod = consultar.GetInt32(4);
                 listaProductos.Add(producto);
                 ComboBoxItem item = new ComboBoxItem();
                 item.Text = $"{producto.des_prod}";
@@ -104,11 +105,68 @@ namespace Proyecto_OASIS
 
         private void Button1_Click_1(object sender, EventArgs e)
         {
-            Confirmacion_de_pedido ToMenu = new Confirmacion_de_pedido();
+            //TODO: Hacer transacciones
+            //Insertar compra
+            if (carrito.Count > 0)
+            {
+                int id;
+                MySqlConnection conexion = Connection.GetConnection();
+                MySqlCommand comm = conexion.CreateCommand();
+                comm.CommandText = "INSERT INTO sale (datetime_sale, total_sale, client_id_client, user_id_user) VALUES (now(), 0, @client, @user)";
+                comm.Parameters.AddWithValue("@client", cliente.id_client);
+                comm.Parameters.AddWithValue("@user", Login.idUsuario);
+                comm.ExecuteNonQuery();
+                id = Convert.ToInt32(comm.LastInsertedId);
+                conexion.Close();
+
+                //Insertar detalles de compra 
+                int noRows = -1;
+                foreach (ProductAccount producto in carrito)
+                {
+                    try
+                    {
+                        conexion = Connection.GetConnection();
+                        comm = conexion.CreateCommand();
+                        comm.CommandText = "INSERT INTO sale_has_product (sale_id_sale, product_id_prod, quantity_prod) VALUES (@id_sale, @id_prod, 1)";
+                        comm.Parameters.AddWithValue("@id_sale", id);
+                        comm.Parameters.AddWithValue("@id_prod", producto.id_prod);
+                        noRows = comm.ExecuteNonQuery();
+                    }
+                    catch (Exception err)
+                    {
+                        Console.WriteLine(err);
+                    }
+                    finally
+                    {
+                        conexion.Close();
+                    }
+                }
+
+                if (noRows > 0)
+                {
+                    MessageBox.Show("Compra registrada con exito", "Compra realizada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    reset();
+                }
+                else
+                {
+                    MessageBox.Show("Hubo un error en la transaccion", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Agregue algunos articulos antes de confirmar", "Carrito vacio", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+            Confirmacion_de_pedido ToMenu = new Confirmacion_de_pedido(carrito);
             this.Hide();
             ToMenu.Show();
         }
-
+        private void reset()
+        {
+            carrito.Clear();
+            dataGridView1.Rows.Clear();
+            label5.Text = "$0.00";
+        }
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -136,16 +194,20 @@ namespace Proyecto_OASIS
             if (comboBox2.Text != "")
             {
                 //agregamos al carrito
-                carrito.Add(listaProductos[comboBox2.SelectedIndex]);
-                ProductAccount producto = listaProductos[comboBox2.SelectedIndex];
-                //mostrar en datagrid
-                int n = dataGridView1.Rows.Add();
-                dataGridView1.Rows[n].Cells[0].Value = producto.id_prod;
-                dataGridView1.Rows[n].Cells[1].Value = producto.name_prod;
-                dataGridView1.Rows[n].Cells[2].Value = producto.des_prod;
-                dataGridView1.Rows[n].Cells[3].Value = producto.price_prod;
+                ProductAccount productNew = listaProductos[comboBox2.SelectedIndex];
+                productNew.items = 1;
 
-                sumarTotal(producto.price_prod);
+                int n = dataGridView1.Rows.Add();
+                dataGridView1.Rows[n].Cells[0].Value = productNew.id_prod;
+                dataGridView1.Rows[n].Cells[1].Value = productNew.name_prod;
+                dataGridView1.Rows[n].Cells[2].Value = productNew.des_prod;
+                dataGridView1.Rows[n].Cells[3].Value = productNew.price_prod;
+                dataGridView1.Rows[n].Cells[4].Value = 1;
+                dataGridView1.Rows[n].Cells[5].Value = productNew.price_prod;
+                carrito.Add(productNew);
+                sumarTotal(productNew.price_prod);
+
+                
             }
         }
 
@@ -183,6 +245,16 @@ namespace Proyecto_OASIS
         {
             n = e.RowIndex;
             Console.WriteLine(n);
+        }
+
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
